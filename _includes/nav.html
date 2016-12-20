@@ -1,0 +1,26 @@
+{% assign base_path = page.url | slice: 1, page.url.size
+                               | split: "/" | first %}
+
+{% comment %}root path acts as index to /blog/{% endcomment %}
+{% if base_path == "blog" %}
+  {% assign base_path = nil %}
+{% endif %}
+
+{% assign nav_pages = site.pages | where: "name", "index.html"
+                                 | sort: "nav_index" %}
+
+<div id="main-nav-wrap">
+  <div id="main-nav">
+    <div>my cool site</div>
+    {% for nav_page in nav_pages %}
+      {% assign nav_base_path = nav_page.url | slice: 1, nav_page.url.size
+                                             | split: "/" | first %}
+
+      {% if nav_base_path == base_path %}
+        <a class="active" href="{{ nav_page.url }}">{{ nav_page.title }}</a>
+      {% else %}
+        <a href="{{ nav_page.url }}">{{ nav_page.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

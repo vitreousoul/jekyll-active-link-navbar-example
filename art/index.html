@@ -1,0 +1,20 @@
+---
+title: art
+layout: base
+nav_index: 1
+---
+
+{% assign art_pages = site.pages | where: "page_type", "art"
+                      | where_exp: "item", "item.name != 'index.html'" %}
+
+<h2>{{ page.title | capitalize }}</h2>
+
+<div class="list-view-link">
+  {% for art_page in art_pages %}
+      <a href="{{ art_page.url }}">
+        <h3>{{ art_page.title }}</h3>
+      </a>
+      <span>{{ art_page.date | date: "%b %m, %y" }}</span>
+      <span>{{ art_page.description }}</span>
+  {% endfor %}
+</div>

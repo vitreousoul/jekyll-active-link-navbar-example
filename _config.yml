@@ -1,0 +1,21 @@
+title: data-driven jekyll navbar
+author: me
+description: >
+  This is an example of a data-driven jekyll navbar.
+
+exclude:
+  - README.md
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      page_type: blog
+      permalink: "/blog/:year/:month/:day/:title/"
+  -
+    scope:
+      path: "art"
+    values:
+      page_type: "art"

@@ -1,0 +1,20 @@
+---
+title: blog
+layout: base
+nav_index: 0
+---
+
+<h2>{{ page.title | capitalize }}</h2>
+
+<div class="list-view-link">
+  {% for page_item in site.posts %}
+
+      <a href="{{ page_item.url }}">
+        <h3>{{ page_item.title }}</h3>
+      </a>
+      <span>{{ page_item.date | date: "%b %m, %y" }}</span>
+      <span>{{ page_item.description }}</span>
+
+  {% endfor %}
+
+</div>
