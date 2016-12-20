@@ -1,7 +1,7 @@
-title: data-driven jekyll navbar
+title: Jekyll Active Link Navbar Example
 author: me
 description: >
-  This is an example of a data-driven jekyll navbar.
+  This is an example of active-link styling in a navbar.
 
 exclude:
   - README.md
